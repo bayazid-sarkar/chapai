@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>চাঁপাইনবাবগঞ্জ জেলা ছাত্রকল্যাণ পরিষদ, জগন্নাথ বিশ্ববিদ্যালয় — নির্বাচন ২০২৬</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --primary-dark: #0f2438;
+    --primary-light: #2a5080;
+    --accent: #c8922a;
+    --accent-light: #e8b84b;
+    --accent-pale: #fdf3e0;
+    --bg: #f5f2ed;
+    --bg-card: #ffffff;
+    --text: #1c2b3a;
+    --text-muted: #5a6a7a;
+    --text-light: #8a9aaa;
+    --border: #ddd8cf;
+    --success: #1a6b3c;
+    --success-bg: #eaf5ee;
+    --error: #8b1a1a;
+    --error-bg: #fdf0f0;
+    --shadow: 0 4px 24px rgba(26,58,92,0.10);
+    --shadow-md: 0 8px 40px rgba(26,58,92,0.15);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--primary-dark);
+    border-bottom: 3px solid var(--accent);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+  }
+
+  .header-top {
+    background: var(--primary);
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .header-logo {
+    width: 52px;
+    height: 52px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-family: 'Noto Serif Bengali', serif;
+    flex-shrink: 0;
+    border: 2px solid var(--accent-light);
+  }
+
+  .header-title-block {
+    text-align: center;
+  }
+
+  .header-title-bn {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+  }
+
+  .header-subtitle-bn {
+    font-size: 12px;
+    color: var(--accent-light);
+    font-weight: 400;
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+  }
+
+  .header-election-bar {
+    background: var(--accent);
+    text-align: center;
+    padding: 6px 24px;
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    letter-spacing: 0.8px;
+  }
+
+  /* ── LAYOUT ── */
+  .page-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 16px 60px;
+  }
+
+  .election-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-pale);
+    border: 1px solid var(--accent);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.3px;
+  }
+
+  .election-badge::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 480px;
+    overflow: hidden;
+  }
+
+  .card-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    padding: 28px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-header::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(200,146,42,0.15);
+  }
+
+  .card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -20px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(200,146,42,0.08);
+  }
+
+  .card-header-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-header h2 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    line-height: 1.4;
+  }
+
+  .card-header p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-body {
+    padding: 32px;
+  }
+
+  /* ── FORM ── */
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--bg);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+
+  .form-input:focus {
+    border-color: var(--primary-light);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(26,58,92,0.10);
+  }
+
+  .form-input::placeholder { color: var(--text-light); }
+
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 14px 24px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+    text-align: center;
+  }
+
+  .btn:active { transform: scale(0.98); }
+  .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  .btn-primary {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 3px 12px rgba(26,58,92,0.25);
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: var(--primary-dark);
+    box-shadow: 0 5px 18px rgba(26,58,92,0.35);
+  }
+
+  .btn-accent {
+    background: var(--accent);
+    color: var(--primary-dark);
+    box-shadow: 0 3px 12px rgba(200,146,42,0.3);
+    font-weight: 700;
+  }
+  .btn-accent:hover:not(:disabled) {
+    background: var(--accent-light);
+    box-shadow: 0 5px 18px rgba(200,146,42,0.4);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 1.5px solid var(--primary);
+    box-shadow: none;
+    margin-top: 10px;
+  }
+  .btn-outline:hover:not(:disabled) { background: rgba(26,58,92,0.05); }
+
+  /* ── ALERTS ── */
+  .alert {
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: none;
+    line-height: 1.5;
+  }
+  .alert.show { display: block; }
+  .alert-error { background: var(--error-bg); color: var(--error); border: 1px solid #f5c0c0; }
+  .alert-success { background: var(--success-bg); color: var(--success); border: 1px solid #b8dfc7; }
+  .alert-info { background: #e8f0fb; color: #1a3a7a; border: 1px solid #b8cfee; }
+
+  /* ── OTP BOX ── */
+  .otp-group {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .otp-input {
+    width: 50px;
+    height: 56px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    color: var(--primary);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: monospace;
+  }
+
+  .otp-input:focus {
+    border-color: var(--accent);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(200,146,42,0.15);
+  }
+
+  .otp-timer {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  .otp-timer span { color: var(--accent); font-weight: 700; }
+
+  /* ── VOTING INTERFACE ── */
+  .vote-card { max-width: 760px; }
+
+  .position-section {
+    margin-bottom: 40px;
+  }
+
+  .position-title {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .position-title::before {
+    content: '★';
+    color: var(--accent);
+    font-size: 14px;
+  }
+
+  .candidates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+
+  .candidate-card {
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    background: #fff;
+    position: relative;
+  }
+
+  .candidate-card:hover {
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+  }
+
+  .candidate-card.selected {
+    border-color: var(--accent);
+    background: var(--accent-pale);
+    box-shadow: 0 0 0 3px rgba(200,146,42,0.15), var(--shadow);
+  }
+
+  .candidate-card.selected .check-badge { display: flex; }
+
+  .check-badge {
+    display: none;
+    position: absolute;
+    top: -8px; right: -8px;
+    width: 26px; height: 26px;
+    background: var(--accent);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(200,146,42,0.4);
+  }
+
+  .candidate-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    background: linear-gradient(135deg, #d0ddf0 0%, #b8cce8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    border: 3px solid var(--border);
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .candidate-card.selected .candidate-photo { border-color: var(--accent); }
+
+  .candidate-name {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .candidate-dept {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* ── VOTE CONFIRM ── */
+  .vote-summary {
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .vote-summary h4 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+
+  .vote-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .vote-row:last-child { border-bottom: none; }
+  .vote-row .pos { color: var(--text-muted); }
+  .vote-row .name { font-weight: 600; color: var(--primary); }
+
+  /* ── SUCCESS SCREEN ── */
+  .success-screen {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .success-icon {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: var(--success-bg);
+    border: 3px solid var(--success);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin: 0 auto 20px;
+  }
+
+  .success-screen h3 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--success);
+    margin-bottom: 10px;
+  }
+
+  .success-screen p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .voter-info-bar {
+    background: var(--primary);
+    color: #fff;
+    border-radius: var(--radius-sm);
+    padding: 12px 20px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .voter-name-badge { font-weight: 600; }
+  .voter-id-badge { color: var(--accent-light); font-size: 12px; }
+
+  /* ── LOADING ── */
+  .spinner {
+    display: inline-block;
+    width: 18px; height: 18px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--primary-dark);
+    padding: 16px 24px;
+    text-align: center;
+    border-top: 2px solid var(--accent);
+  }
+
+  .footer-text {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+  }
+
+  .footer-dev {
+    font-size: 11px;
+    color: var(--accent-light);
+    margin-top: 4px;
+    opacity: 0.8;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+  }
+
+  .hint-text {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  .step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .step-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: background 0.3s;
+  }
+  .step-dot.active { background: var(--accent); }
+  .step-dot.done { background: var(--success); }
+
+  .step-line {
+    width: 40px; height: 2px;
+    background: var(--border);
+    transition: background 0.3s;
+  }
+  .step-line.done { background: var(--success); }
+
+  /* ── SCREENS ── */
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  /* Page title */
+  .page-title-block {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .page-title-block h1 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    line-height: 1.4;
+  }
+
+  .page-title-block p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 8px;
+  }
+
+  @media (max-width: 600px) {
+    .card-body { padding: 24px 20px; }
+    .header-title-bn { font-size: 15px; }
+    .candidates-grid { grid-template-columns: repeat(2, 1fr); }
+    .page-title-block h1 { font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-top">
+    <div class="header-logo">ছা</div>
+    <div class="header-title-block">
+      <div class="header-title-bn">চাঁপাইনবাবগঞ্জ জেলা ছাত্রকল্যাণ পরিষদ</div>
+      <div class="header-title-bn" style="font-size:15px; font-weight:600;">জগন্নাথ বিশ্ববিদ্যালয়</div>
+      <div class="header-subtitle-bn">Jagannath University · Dhaka, Bangladesh</div>
+    </div>
+    <div class="header-logo" style="background:transparent; border:1px solid rgba(200,146,42,0.4);">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <circle cx="15" cy="10" r="5" stroke="#c8922a" stroke-width="1.8"/>
+        <path d="M5 26c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="#c8922a" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M15 16v4M12 18l3 2 3-2" stroke="#c8922a" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="header-election-bar">
+    ✦ &nbsp; কার্যকরী পরিষদ নির্বাচন — ২০২৬ &nbsp; ✦
+  </div>
+</header>
+
+<!-- ══ PAGE ══ -->
+<div class="page-wrap">
+
+  <div class="election-badge">🗳️ নির্বাচন চলমান • ভোট প্রদান করুন</div>
+
+  <!-- STEP INDICATOR -->
+  <div class="step-indicator" id="stepIndicator">
+    <div class="step-dot active" id="dot1"></div>
+    <div class="step-line" id="line1"></div>
+    <div class="step-dot" id="dot2"></div>
+    <div class="step-line" id="line2"></div>
+    <div class="step-dot" id="dot3"></div>
+    <div class="step-line" id="line3"></div>
+    <div class="step-dot" id="dot4"></div>
+  </div>
+
+  <!-- ══ SCREEN 1: LOGIN ══ -->
+  <div id="screen-login" class="screen active">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">🔐</div>
+        <h2>ভোটার যাচাইকরণ</h2>
+        <p>আপনার স্টুডেন্ট আইডি ও ইমেইল দিয়ে লগইন করুন</p>
+      </div>
+      <div class="card-body">
+        <div class="alert alert-error" id="loginError"></div>
+        <div class="form-group">
+          <label class="form-label" for="studentId">স্টুডেন্ট আইডি</label>
+          <input type="text" id="studentId" class="form-input" placeholder="যেমন: 2021-1-60-001" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">ইমেইল ঠিকানা</label>
+          <input type="email" id="email" class="form-input" placeholder="আপনার নিবন্ধিত ইমেইল">
+        </div>
+        <button class="btn btn-primary" id="loginBtn" onclick="handleLogin()">
+          যাচাই করুন ও OTP পাঠান
+        </button>
+        <p class="hint-text">
+          📌 শুধুমাত্র নিবন্ধিত ভোটাররা ভোট দিতে পারবেন। <br>
+          কোনো সমস্যা হলে নির্বাচন কমিটির সাথে যোগাযোগ করুন।
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN 2: OTP ══ -->
+  <div id="screen-otp" class="screen">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">📨</div>
+        <h2>OTP যাচাইকরণ</h2>
+        <p id="otpEmailHint">আপনার ইমেইলে ৬ সংখ্যার কোড পাঠানো হয়েছে</p>
+      </div>
+      <div class="card-body">
+        <div class="alert alert-error" id="otpError"></div>
+        <div class="alert alert-success" id="otpSuccess"></div>
+
+        <div class="otp-group">
+          <input type="text" class="otp-input" maxlength="1" id="otp0" oninput="otpMove(0)" onkeydown="otpBack(event,0)">
+          <input type="text" class="otp-input" maxlength="1" id="otp1" oninput="otpMove(1)" onkeydown="otpBack(event,1)">
+          <input type="text" class="otp-input" maxlength="1" id="otp2" oninput="otpMove(2)" onkeydown="otpBack(event,2)">
+          <input type="text" class="otp-input" maxlength="1" id="otp3" oninput="otpMove(3)" onkeydown="otpBack(event,3)">
+          <input type="text" class="otp-input" maxlength="1" id="otp4" oninput="otpMove(4)" onkeydown="otpBack(event,4)">
+          <input type="text" class="otp-input" maxlength="1" id="otp5" oninput="otpMove(5)" onkeydown="otpBack(event,5)">
+        </div>
+
+        <div class="otp-timer" id="otpTimerDiv">
+          কোড মেয়াদ: <span id="otpTimer">10:00</span>
+        </div>
+
+        <button class="btn btn-accent" id="otpBtn" onclick="handleOTP()">কোড যাচাই করুন</button>
+        <button class="btn btn-outline" id="resendBtn" onclick="resendOTP()" disabled>পুনরায় OTP পাঠান</button>
+
+        <p class="hint-text">
+          🔒 OTP টি আপনার নিবন্ধিত ইমেইলে পাঠানো হয়েছে।<br>
+          স্প্যাম ফোল্ডারটিও দেখুন।
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN 3: VOTING ══ -->
+  <div id="screen-vote" class="screen">
+    <div class="card vote-card" style="max-width:780px;">
+      <div class="card-header" style="padding:24px 32px;">
+        <div class="card-header-icon">🗳️</div>
+        <h2>প্রার্থী নির্বাচন করুন</h2>
+        <p>প্রতিটি পদের জন্য একজন করে প্রার্থী বেছে নিন</p>
+      </div>
+      <div class="card-body">
+        <div id="voterInfoBar" class="voter-info-bar">
+          <span class="voter-name-badge" id="voterNameDisplay">—</span>
+          <span class="voter-id-badge" id="voterIdDisplay">—</span>
+        </div>
+
+        <div class="alert alert-error" id="voteError"></div>
+
+        <!-- Candidates rendered by JS -->
+        <div id="candidatesContainer"></div>
+
+        <div class="divider"></div>
+        <button class="btn btn-accent" onclick="goToConfirm()" style="font-size:17px; padding:16px;">
+          পরবর্তী ধাপ → নিশ্চিত করুন
+        </button>
+        <p class="hint-text" style="margin-top:12px;">
+          ⚠️ একবার ভোট দেওয়ার পর পরিবর্তন করা সম্ভব নয়।
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN 4: CONFIRM ══ -->
+  <div id="screen-confirm" class="screen">
+    <div class="card" style="max-width:520px;">
+      <div class="card-header">
+        <div class="card-header-icon">✅</div>
+        <h2>ভোট নিশ্চিত করুন</h2>
+        <p>আপনার পছন্দ পুনরায় যাচাই করুন</p>
+      </div>
+      <div class="card-body">
+        <div class="alert alert-error" id="confirmError"></div>
+        <div class="vote-summary">
+          <h4>📋 আপনার ভোটের সারসংক্ষেপ</h4>
+          <div id="voteSummaryContent"></div>
+        </div>
+        <div class="alert alert-info show" style="font-size:13px; margin-bottom:20px;">
+          ⚠️ একবার ভোট দেওয়ার পর আর পরিবর্তন করা যাবে না। নিশ্চিত হয়ে "ভোট প্রদান করুন" বাটনে ক্লিক করুন।
+        </div>
+        <button class="btn btn-accent" id="submitVoteBtn" onclick="submitVote()" style="font-size:16px; padding:15px;">
+          🗳️ &nbsp; ভোট প্রদান করুন
+        </button>
+        <button class="btn btn-outline" onclick="goBack()" style="margin-top:12px;">← ফিরে যান</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN 5: SUCCESS ══ -->
+  <div id="screen-success" class="screen">
+    <div class="card" style="max-width:480px;">
+      <div class="card-body" style="padding:40px 32px;">
+        <div class="success-screen">
+          <div class="success-icon">✅</div>
+          <h3>ভোট সফলভাবে গৃহীত হয়েছে!</h3>
+          <p>
+            আপনার ভোট সফলভাবে রেকর্ড করা হয়েছে।<br>
+            চাঁপাইনবাবগঞ্জ জেলা ছাত্রকল্যাণ পরিষদ, জগন্নাথ বিশ্ববিদ্যালয়ের<br>
+            <strong>কার্যকরী পরিষদ নির্বাচন ২০২৬</strong>-এ আপনার অংশগ্রহণের জন্য ধন্যবাদ।
+          </p>
+          <div class="divider"></div>
+          <p style="font-size:13px; color:var(--text-light);">
+            🕒 ভোটের ফলাফল নির্বাচন কমিটি কর্তৃক নির্ধারিত সময়ে প্রকাশ করা হবে।
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end page-wrap -->
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-text">
+    © ২০২৬ চাঁপাইনবাবগঞ্জ জেলা ছাত্রকল্যাণ পরিষদ, জগন্নাথ বিশ্ববিদ্যালয় — সর্বস্বত্ব সংরক্ষিত
+  </div>
+  <div class="footer-dev">
+    Developed & Maintained by <strong style="color:#e8b84b;">Jagannath University IT Society</strong>
+  </div>
+</footer>
+
+<script>
+// ══════════════════════════════════════════════════
+//  CONFIGURATION — Replace with your actual values
+// ══════════════════════════════════════════════════
+const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbw3lCvMI2qRBlaCpQJ-kINAIvVho4LusbTyq9FPYLnI0ChbbjJyzXsffugiKUGRcj9cYg/exec'; // <-- paste here
+
+// ══════════════════════════════════════════════════
+//  CANDIDATE DATA (hardcoded)
+// ══════════════════════════════════════════════════
+const CANDIDATES = [
+  {
+    position: 'সাধারণ সম্পাদক',
+    positionEn: 'general_secretary',
+    candidates: [
+      { id: 'C01', name: 'আসমাউল রানা', dept: 'নৃবিজ্ঞান বিভাগ, ১৭ তম আবর্তন', emoji: '👑' },
+      { id: 'C02', name: 'মো. বাশার আলী', dept: 'রাষ্ট্রবিজ্ঞান বিভাগ, ১৭ তম আবর্তন', emoji: '📚' },
+      { id: 'C03', name: 'মো. সিহাব আলী', dept: 'আইন বিভাগ, ১৭ তম আবর্তন', emoji: '⚖️' },
+      { id: 'C04', name: 'মো. কুদ্দুস আলী', dept: 'ম্যানেজমেন্ট স্ট্যাডিজ বিভাগ, ১৭ তম আবর্তন', emoji: '💼' },
+    ]
+  },
+];
+
+// ══════════════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════════════
+let currentVoter = null;
+let selectedVotes = {};
+let otpTimerInterval = null;
+let timeLeft = 600; // 10 minutes
+
+// ══════════════════════════════════════════════════
+//  SCREEN MANAGEMENT
+// ══════════════════════════════════════════════════
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + id).classList.add('active');
+
+  const steps = { login: 0, otp: 1, vote: 2, confirm: 3, success: 4 };
+  const step = steps[id] ?? 0;
+  updateStepIndicator(step);
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateStepIndicator(step) {
+  for (let i = 1; i <= 4; i++) {
+    const dot = document.getElementById('dot' + i);
+    const line = document.getElementById('line' + i);
+    dot.classList.remove('active', 'done');
+    if (line) line.classList.remove('done');
+
+    if (i - 1 < step) { dot.classList.add('done'); if (line) line.classList.add('done'); }
+    else if (i - 1 === step) { dot.classList.add('active'); }
+  }
+}
+
+// ══════════════════════════════════════════════════
+//  LOGIN
+// ══════════════════════════════════════════════════
+async function handleLogin() {
+  const sid = document.getElementById('studentId').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const btn = document.getElementById('loginBtn');
+  const err = document.getElementById('loginError');
+
+  err.classList.remove('show');
+
+  if (!sid || !email) {
+    showAlert(err, 'স্টুডেন্ট আইডি এবং ইমেইল উভয়ই প্রয়োজন।');
+    return;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showAlert(err, 'সঠিক ইমেইল ঠিকানা দিন।');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>যাচাই করা হচ্ছে...';
+
+  try {
+    const res = await apiCall('verifyVoter', { studentId: sid, email: email });
+
+    if (res.success) {
+      currentVoter = res.voter;
+      document.getElementById('otpEmailHint').textContent =
+        `${maskEmail(email)} -এ ৬ সংখ্যার কোড পাঠানো হয়েছে`;
+      startOTPTimer();
+      showScreen('otp');
+    } else {
+      showAlert(err, res.message || 'ভোটার তালিকায় আপনার তথ্য পাওয়া যায়নি। নির্বাচন কমিটির সাথে যোগাযোগ করুন।');
+    }
+  } catch (e) {
+    showAlert(err, 'সংযোগ ত্রুটি। আবার চেষ্টা করুন। (' + e.message + ')');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = 'যাচাই করুন ও OTP পাঠান';
+}
+
+// ══════════════════════════════════════════════════
+//  OTP
+// ══════════════════════════════════════════════════
+function otpMove(i) {
+  const val = document.getElementById('otp' + i).value;
+  if (val && i < 5) document.getElementById('otp' + (i + 1)).focus();
+}
+
+function otpBack(e, i) {
+  if (e.key === 'Backspace' && !document.getElementById('otp' + i).value && i > 0) {
+    document.getElementById('otp' + (i - 1)).focus();
+  }
+}
+
+function getOTPValue() {
+  let otp = '';
+  for (let i = 0; i < 6; i++) otp += document.getElementById('otp' + i).value;
+  return otp;
+}
+
+async function handleOTP() {
+  const otp = getOTPValue();
+  const err = document.getElementById('otpError');
+  const suc = document.getElementById('otpSuccess');
+  const btn = document.getElementById('otpBtn');
+
+  err.classList.remove('show');
+  suc.classList.remove('show');
+
+  if (otp.length < 6) {
+    showAlert(err, '৬ সংখ্যার OTP কোড সম্পূর্ণ করুন।');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>যাচাই করা হচ্ছে...';
+
+  try {
+    const res = await apiCall('verifyOTP', {
+      studentId: currentVoter.studentId,
+      otp: otp
+    });
+
+    if (res.success) {
+      clearInterval(otpTimerInterval);
+      renderCandidates();
+      document.getElementById('voterNameDisplay').textContent = currentVoter.name;
+      document.getElementById('voterIdDisplay').textContent = 'আইডি: ' + currentVoter.studentId;
+      showScreen('vote');
+    } else {
+      showAlert(err, res.message || 'OTP কোড সঠিক নয়। আবার চেষ্টা করুন।');
+    }
+  } catch (e) {
+    showAlert(err, 'সংযোগ ত্রুটি। আবার চেষ্টা করুন।');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = 'কোড যাচাই করুন';
+}
+
+async function resendOTP() {
+  const btn = document.getElementById('resendBtn');
+  const suc = document.getElementById('otpSuccess');
+  btn.disabled = true;
+  btn.innerHTML = 'পাঠানো হচ্ছে...';
+
+  try {
+    await apiCall('resendOTP', { studentId: currentVoter.studentId });
+    showAlert(suc, 'নতুন OTP পাঠানো হয়েছে।');
+    timeLeft = 600;
+    startOTPTimer();
+  } catch (e) { }
+
+  btn.innerHTML = 'পুনরায় OTP পাঠান';
+}
+
+function startOTPTimer() {
+  clearInterval(otpTimerInterval);
+  timeLeft = 600;
+  const resendBtn = document.getElementById('resendBtn');
+  resendBtn.disabled = true;
+
+  otpTimerInterval = setInterval(() => {
+    timeLeft--;
+    const m = Math.floor(timeLeft / 60);
+    const s = timeLeft % 60;
+    document.getElementById('otpTimer').textContent =
+      String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+
+    if (timeLeft <= 0) {
+      clearInterval(otpTimerInterval);
+      document.getElementById('otpTimer').textContent = 'মেয়াদ শেষ';
+      resendBtn.disabled = false;
+    }
+  }, 1000);
+}
+
+// ══════════════════════════════════════════════════
+//  VOTING
+// ══════════════════════════════════════════════════
+function renderCandidates() {
+  const container = document.getElementById('candidatesContainer');
+  container.innerHTML = '';
+
+  CANDIDATES.forEach(pos => {
+    const section = document.createElement('div');
+    section.className = 'position-section';
+    section.innerHTML = `<div class="position-title">${pos.position}</div>`;
+
+    const grid = document.createElement('div');
+    grid.className = 'candidates-grid';
+
+    pos.candidates.forEach(c => {
+      const card = document.createElement('div');
+      card.className = 'candidate-card';
+      card.id = 'ccard-' + c.id;
+      card.onclick = () => selectCandidate(pos.positionEn, c.id, pos.candidates.map(x => x.id));
+      card.innerHTML = `
+        <div class="check-badge">✓</div>
+        <div class="candidate-photo">${c.emoji}</div>
+        <div class="candidate-name">${c.name}</div>
+        <div class="candidate-dept">${c.dept}</div>
+      `;
+      grid.appendChild(card);
+    });
+
+    section.appendChild(grid);
+    container.appendChild(section);
+  });
+}
+
+function selectCandidate(position, candidateId, allIds) {
+  allIds.forEach(id => {
+    const el = document.getElementById('ccard-' + id);
+    if (el) el.classList.remove('selected');
+  });
+  document.getElementById('ccard-' + candidateId).classList.add('selected');
+  selectedVotes[position] = candidateId;
+}
+
+function goToConfirm() {
+  const err = document.getElementById('voteError');
+  err.classList.remove('show');
+
+  const missing = CANDIDATES.filter(p => !selectedVotes[p.positionEn]);
+  if (missing.length > 0) {
+    showAlert(err, 'অনুগ্রহ করে সকল পদের জন্য প্রার্থী বেছে নিন: ' +
+      missing.map(p => p.position).join(', '));
+    return;
+  }
+
+  // Build summary
+  const summaryEl = document.getElementById('voteSummaryContent');
+  summaryEl.innerHTML = '';
+  CANDIDATES.forEach(pos => {
+    const cid = selectedVotes[pos.positionEn];
+    const cand = pos.candidates.find(c => c.id === cid);
+    const row = document.createElement('div');
+    row.className = 'vote-row';
+    row.innerHTML = `<span class="pos">${pos.position}</span><span class="name">${cand ? cand.emoji + ' ' + cand.name : '—'}</span>`;
+    summaryEl.appendChild(row);
+  });
+
+  showScreen('confirm');
+}
+
+function goBack() { showScreen('vote'); }
+
+// ══════════════════════════════════════════════════
+//  SUBMIT
+// ══════════════════════════════════════════════════
+async function submitVote() {
+  const btn = document.getElementById('submitVoteBtn');
+  const err = document.getElementById('confirmError');
+  err.classList.remove('show');
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>ভোট জমা দেওয়া হচ্ছে...';
+
+  try {
+    const votes = {};
+    CANDIDATES.forEach(pos => {
+      const cid = selectedVotes[pos.positionEn];
+      const cand = pos.candidates.find(c => c.id === cid);
+      votes[pos.positionEn] = { candidateId: cid, candidateName: cand?.name };
+    });
+
+    const res = await apiCall('submitVote', {
+      studentId: currentVoter.studentId,
+      votes: votes
+    });
+
+    if (res.success) {
+      showScreen('success');
+    } else {
+      showAlert(err, res.message || 'ভোট জমা দিতে সমস্যা হয়েছে। আবার চেষ্টা করুন।');
+      btn.disabled = false;
+      btn.innerHTML = '🗳️ &nbsp; ভোট প্রদান করুন';
+    }
+  } catch (e) {
+    showAlert(err, 'সংযোগ ত্রুটি। আবার চেষ্টা করুন।');
+    btn.disabled = false;
+    btn.innerHTML = '🗳️ &nbsp; ভোট প্রদান করুন';
+  }
+}
+
+// ══════════════════════════════════════════════════
+//  HELPERS
+// ══════════════════════════════════════════════════
+function showAlert(el, msg) {
+  el.textContent = msg;
+  el.classList.add('show');
+}
+
+function maskEmail(email) {
+  const [u, d] = email.split('@');
+  return u.slice(0, 3) + '***@' + d;
+}
+
+async function apiCall(action, params) {
+  const url = GAS_API_URL + '?action=' + action;
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify({ action, ...params })
+  });
+  if (!response.ok) throw new Error('HTTP ' + response.status);
+  return await response.json();
+}
+</script>
+</body>
+</html>
