@@ -4,357 +4,339 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>চাঁপাইনবাবগঞ্জ জেলা ছাত্রকল্যাণ পরিষদ, জগন্নাথ বিশ্ববিদ্যালয় — নির্বাচন ২০২৬</title>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1e3c72;
-      --primary-dark: #0f2438;
-      --secondary: #11998e;
-      --accent: #f37335;
-      --accent-light: #f9a870;
-      --accent-pale: #fff4ec;
-      --bg: #f4f9f9;
-      --bg-card: #ffffff;
-      --text: #1a2a36;
-      --text-muted: #4a5a6a;
-      --border: #cbd5e0;
-      --success: #1a6b3c;
-      --error: #b91c1c;
-      --shadow: 0 4px 20px rgba(0,0,0,0.06);
+      --primary: #3B4953;
+      --primary-dark: #2C3A42;
+      --secondary: #5A7863;
+      --secondary-light: #90AB8B;
+      --bg-light: #EBF4DD;
+      --card-bg: #FFFFFF;
+      --text: #3B4953;
+      --text-muted: #5A7863;
+      --border: #90AB8B;
+      --success: #2A5A3B;
+      --error: #8B3A3A;
+      --shadow: 0 4px 16px rgba(59,73,83,0.08);
       --radius: 14px;
       --radius-sm: 10px;
-      font-size: 16px; /* base font size increase */
+      font-size: 17px;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Hind Siliguri', sans-serif;
-      background: linear-gradient(135deg, #eef2f5 0%, #e2e8f0 100%);
+      background: var(--bg-light);
       color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* ── HEADER ── */
+    /* HEADER */
     header {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      border-bottom: 4px solid var(--accent);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      background: linear-gradient(135deg, #3B4953, #2C3A42);
+      border-bottom: 4px solid var(--secondary);
+      position: sticky; top: 0; z-index: 100;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
     .header-top {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      padding: 12px 28px;
-      flex-wrap: wrap;
-      text-align: center;
+      display: flex; align-items: center; justify-content: center;
+      gap: 20px; padding: 18px 28px; flex-wrap: wrap;
     }
     .header-logo {
-      width: 60px; height: 60px;
-      background: var(--accent);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px; font-weight: 700; color: #1e3c72;
+      width: 64px; height: 64px; background: var(--secondary);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; font-weight: 700; color: #fff;
       font-family: 'Noto Serif Bengali', serif;
-      border: 2px solid var(--accent-light);
+      border: 3px solid var(--secondary-light);
     }
     .header-title-bn {
       font-family: 'Noto Serif Bengali', serif;
-      font-size: 20px; font-weight: 700; color: #fff;
-      line-height: 1.4; letter-spacing: 0.3px;
-    }
-    .header-subtitle-bn {
-      font-size: 14px; color: #f9a870; margin-top: 4px;
+      font-size: 22px; font-weight: 700; color: #fff;
+      line-height: 1.4; letter-spacing: 0.4px; text-align: center;
     }
     .header-election-bar {
-      background: var(--accent);
-      text-align: center; padding: 8px 24px;
-      font-family: 'Noto Serif Bengali', serif; font-size: 15px;
-      font-weight: 600; color: #1e3c72; letter-spacing: 0.8px;
+      background: var(--secondary);
+      text-align: center; padding: 10px 24px;
+      font-family: 'Noto Serif Bengali', serif; font-size: 16px;
+      font-weight: 600; color: #fff; letter-spacing: 0.8px;
     }
 
-    /* ── MAIN LAYOUT ── */
+    /* MAIN */
     .page-wrap {
-      flex: 1;
-      padding: 30px 20px 60px;
+      flex: 1; padding: 36px 20px 60px;
     }
     .election-badge {
       display: inline-flex; align-items: center; gap: 10px;
-      background: var(--accent-pale); border: 1px solid var(--accent);
-      border-radius: 100px; padding: 8px 22px;
-      font-size: 16px; font-weight: 600; color: var(--accent);
-      margin-bottom: 24px;
+      background: #fff; border: 1px solid var(--secondary);
+      border-radius: 100px; padding: 10px 24px;
+      font-size: 17px; font-weight: 600; color: var(--secondary);
+      margin-bottom: 28px;
     }
     .dashboard-grid {
-      display: flex;
-      gap: 28px;
-      max-width: 1300px;
-      margin: 0 auto;
-      flex-wrap: wrap;
+      display: flex; gap: 28px;
+      max-width: 1300px; margin: 0 auto; flex-wrap: wrap;
     }
     .candidates-panel {
-      flex: 3;
-      min-width: 320px;
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      padding: 28px 24px;
+      flex: 3; min-width: 340px;
+      background: var(--card-bg); border-radius: var(--radius);
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      padding: 32px 28px;
     }
-    .voter-panel {
-      flex: 2;
-      min-width: 300px;
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
+    .voter-stats-panel {
+      flex: 1; min-width: 280px;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .stats-box {
+      background: var(--card-bg); border-radius: var(--radius);
+      border: 1px solid var(--border); box-shadow: var(--shadow);
       padding: 24px;
-      max-height: 80vh;
+    }
+    .voter-list-box {
+      background: var(--card-bg); border-radius: var(--radius);
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      padding: 16px;
+      max-height: 500px;
       overflow-y: auto;
     }
 
-    /* ── CARDS / TYPOGRAPHY ── */
+    /* Candidates grid */
     .candidates-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-      gap: 24px;
-      margin-top: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px; margin-top: 16px;
     }
     .candidate-card {
       border: 2px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 22px 16px;
-      text-align: center;
-      background: #fff;
-      transition: box-shadow 0.2s, transform 0.1s;
+      padding: 24px 16px; text-align: center;
+      background: #fff; transition: box-shadow 0.2s, transform 0.15s;
       display: flex; flex-direction: column; align-items: center;
     }
     .candidate-card:hover {
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 24px rgba(59,73,83,0.15);
       transform: translateY(-3px);
-      border-color: var(--accent);
+      border-color: var(--secondary);
     }
     .candidate-photo {
-      width: 90px; height: 90px;
-      border-radius: 50%;
-      margin-bottom: 12px;
-      background: #f0f4f8;
+      width: 100px; height: 100px; border-radius: 50%;
+      margin-bottom: 16px; background: #f0f4f8;
       display: flex; align-items: center; justify-content: center;
-      font-size: 36px;
-      border: 3px solid var(--border);
-      overflow: hidden;
+      overflow: hidden; border: 3px solid var(--border);
     }
     .candidate-photo img {
       width: 100%; height: 100%; object-fit: cover;
     }
     .candidate-name {
       font-family: 'Noto Serif Bengali', serif;
-      font-size: 18px; font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 6px;
+      font-size: 19px; font-weight: 700; color: var(--primary);
+      margin-bottom: 8px;
     }
     .candidate-dept {
-      font-size: 14px; color: var(--text-muted);
-      margin-bottom: 14px;
-      line-height: 1.4;
+      font-size: 15px; color: var(--text-muted);
+      margin-bottom: 16px; line-height: 1.5;
     }
     .btn-vote {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.2s;
+      background: var(--secondary);
+      color: #fff; border: none;
+      padding: 14px 32px; border-radius: 8px;
+      font-weight: 700; font-size: 17px;
+      cursor: pointer; transition: background 0.2s, transform 0.1s;
       display: inline-flex; align-items: center; gap: 8px;
     }
-    .btn-vote:hover { background: #e65c20; }
+    .btn-vote:hover { background: #4A6A55; }
+    .btn-vote:active { transform: scale(0.97); }
 
-    /* Voter table */
-    .voter-stats-box {
-      background: var(--primary);
-      color: white;
-      border-radius: var(--radius-sm);
-      padding: 16px 18px;
-      margin-bottom: 18px;
-      text-align: center;
-      font-weight: 600;
-      font-size: 17px;
-    }
-    .voter-stats-box span { color: var(--accent-light); }
+    /* Voter list table */
     .voter-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
+      width: 100%; border-collapse: collapse; font-size: 15px;
     }
     .voter-table th {
-      background: #f1f5f9;
-      padding: 10px 8px;
-      font-weight: 600;
-      color: var(--primary-dark);
+      background: #f0f4f8; padding: 10px 8px;
+      font-weight: 600; color: var(--primary);
       border-bottom: 2px solid var(--border);
       position: sticky; top: 0;
     }
     .voter-table td {
-      padding: 8px 8px;
-      border-bottom: 1px solid var(--border);
+      padding: 8px; border-bottom: 1px solid var(--border);
     }
-    .status-badge {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 13px;
+    .voter-email { font-family: monospace; font-size: 14px; }
+
+    /* Stats */
+    .stat-item {
+      background: #f9fbf9; border-radius: var(--radius-sm);
+      padding: 16px; margin-bottom: 14px;
+      text-align: center; border: 1px solid var(--border);
     }
-    .status-voted { background: #dcfce7; color: #15803d; }
-    .status-pending { background: #fee2e2; color: #b91c1c; }
-    .voter-email { font-family: monospace; font-size: 13px; }
+    .stat-number {
+      font-size: 32px; font-weight: 700; color: var(--primary);
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 15px; color: var(--text-muted); margin-top: 4px;
+    }
+    .percent-bar-bg {
+      background: #E2E8E0; border-radius: 10px;
+      height: 14px; margin-top: 12px; overflow: hidden;
+    }
+    .percent-bar-fill {
+      background: var(--secondary); height: 100%;
+      border-radius: 10px; width: 0%;
+      transition: width 0.4s ease;
+    }
 
     /* Forms */
-    .form-group { margin-bottom: 18px; }
-    .form-label { display: block; font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+    .card-form {
+      max-width: 520px; margin: 20px auto;
+      background: var(--card-bg); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 36px 32px;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; font-size: 17px; font-weight: 600; margin-bottom: 10px; }
     .form-input {
-      width: 100%; padding: 14px 16px;
+      width: 100%; padding: 16px;
       border: 2px solid var(--border); border-radius: var(--radius-sm);
-      font-size: 16px; outline: none;
-      transition: border-color 0.2s;
+      font-size: 17px; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
     .form-input:focus {
-      border-color: var(--accent); box-shadow: 0 0 0 3px rgba(243,115,53,0.2);
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(90,120,99,0.2);
     }
     .btn {
-      display: block; width: 100%; padding: 14px;
+      display: block; width: 100%; padding: 16px;
       border: none; border-radius: var(--radius-sm);
-      font-size: 17px; font-weight: 700;
+      font-size: 18px; font-weight: 700;
       cursor: pointer; transition: transform 0.1s, box-shadow 0.2s;
     }
     .btn:active { transform: scale(0.98); }
     .btn-primary {
       background: var(--primary); color: #fff;
-      box-shadow: 0 4px 12px rgba(30,60,114,0.3);
+      box-shadow: 0 4px 12px rgba(59,73,83,0.25);
     }
     .btn-accent {
-      background: var(--accent); color: #fff;
-      box-shadow: 0 4px 12px rgba(243,115,53,0.3);
+      background: var(--secondary); color: #fff;
+      box-shadow: 0 4px 12px rgba(90,120,99,0.3);
     }
     .btn-outline {
       background: transparent; color: var(--primary);
-      border: 2px solid var(--primary); margin-top: 12px;
+      border: 2px solid var(--primary); margin-top: 14px;
     }
-
     .alert {
-      border-radius: var(--radius-sm); padding: 12px 16px;
-      font-size: 15px; font-weight: 500; display: none;
+      border-radius: var(--radius-sm); padding: 14px 18px;
+      font-size: 16px; font-weight: 500; display: none;
     }
-    .alert.show { display: block; margin-bottom: 16px; }
-    .alert-error { background: #fee2e2; color: var(--error); border: 1px solid #fecaca; }
-    .alert-success { background: #dcfce7; color: var(--success); border: 1px solid #bbf7d0; }
-
-    .otp-group { display: flex; gap: 10px; justify-content: center; margin-bottom: 18px; }
+    .alert.show { display: block; margin-bottom: 18px; }
+    .alert-error { background: #FFF5F5; color: var(--error); border: 1px solid #FED7D7; }
+    .alert-success { background: #F0FFF4; color: var(--success); border: 1px solid #C6F6D5; }
+    .otp-group { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
     .otp-input {
-      width: 52px; height: 60px; text-align: center;
-      font-size: 24px; font-weight: 700;
+      width: 54px; height: 64px; text-align: center;
+      font-size: 26px; font-weight: 700;
       border: 2px solid var(--border); border-radius: var(--radius-sm);
       outline: none; font-family: monospace;
     }
-    .otp-input:focus { border-color: var(--accent); }
-    .otp-timer { text-align: center; font-size: 15px; margin-bottom: 14px; }
-
-    .hint-text { font-size: 15px; color: var(--text-muted); text-align: center; margin-top: 16px; }
-
+    .otp-input:focus { border-color: var(--secondary); }
+    .otp-timer { text-align: center; font-size: 16px; margin-bottom: 16px; }
+    .hint-text { font-size: 16px; color: var(--text-muted); text-align: center; margin-top: 18px; }
     .screen { display: none; }
     .screen.active { display: block; }
 
     footer {
-      background: var(--primary-dark);
-      padding: 18px 24px; text-align: center;
-      border-top: 3px solid var(--accent);
+      background: var(--primary-dark); padding: 20px 28px;
+      text-align: center; border-top: 3px solid var(--secondary);
     }
-    .footer-text { font-size: 14px; color: rgba(255,255,255,0.7); }
-    .footer-dev { font-size: 13px; color: var(--accent-light); margin-top: 4px; opacity: 0.9; }
-
-    @media (max-width: 768px) {
-      .dashboard-grid { flex-direction: column; }
-      .voter-panel { max-height: none; }
-    }
+    .footer-text { font-size: 15px; color: rgba(255,255,255,0.7); }
+    .footer-dev { font-size: 14px; color: var(--secondary-light); margin-top: 6px; opacity: 0.9; }
   </style>
 </head>
 <body>
-
 <header>
   <div class="header-top">
     <div class="header-logo">JnU</div>
-    <div class="header-title-bn">চাঁপাইনবাবগঞ্জ জেলা ছাত্রকল্যাণ পরিষদ<br>জগন্নাথ বিশ্ববিদ্যালয়</div>
+    <div>
+      <div class="header-title-bn">চাঁপাইনবাবগঞ্জ জেলা ছাত্রকল্যাণ পরিষদ</div>
+      <div class="header-title-bn" style="font-size:18px; font-weight:600;">জগন্নাথ বিশ্ববিদ্যালয়</div>
+    </div>
   </div>
-  <div class="header-election-bar">✦ &nbsp; কার্যকরী পরিষদ নির্বাচন — ২০২৬ &nbsp; ✦</div>
+  <div class="header-election-bar">&nbsp; কার্যকরী পরিষদ নির্বাচন — ২০২৬ &nbsp;</div>
 </header>
 
 <div class="page-wrap">
   <div class="election-badge">🗳️ সাধারণ সম্পাদক পদে ভোটগ্রহণ চলছে</div>
 
-  <!-- ড্যাশবোর্ড (প্রার্থী + ভোটার) -->
+  <!-- প্রধান ড্যাশবোর্ড -->
   <div id="screen-candidates" class="screen active">
     <div class="dashboard-grid">
-      <!-- বাম প্যানেল: প্রার্থী -->
+      <!-- প্রার্থী প্যানেল -->
       <div class="candidates-panel">
         <h2 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:12px;">📌 প্রার্থী তালিকা</h2>
         <div class="candidates-grid" id="candidatesGrid"></div>
-        <p class="hint-text" style="margin-top:20px;">প্রার্থীর নিচের “ভোট দিন” বাটনে ক্লিক করে ভোট প্রদান শুরু করুন</p>
+        <p class="hint-text">প্রার্থীর নিচের "ভোট দিন" বাটনে ক্লিক করে ভোট প্রদান শুরু করুন</p>
       </div>
 
-      <!-- ডান প্যানেল: ভোটার তালিকা ও স্ট্যাটাস -->
-      <div class="voter-panel" id="voterPanel">
-        <h3 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:12px;">👥 ভোটার তালিকা (লাইভ)</h3>
-        <div class="voter-stats-box">
-          মোট ভোটার: <span id="totalVoters">—</span> &nbsp;|&nbsp;
-          ভোট দিয়েছেন: <span id="votedCount">—</span> &nbsp;|&nbsp;
-          শতকরা: <span id="votePercent">—</span>%
+      <!-- ডান প্যানেল: পরিসংখ্যান + ভোটার তালিকা -->
+      <div class="voter-stats-panel">
+        <!-- পরিসংখ্যান -->
+        <div class="stats-box">
+          <h3 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:18px;">📊 ভোটের অবস্থা</h3>
+          <div class="stat-item">
+            <div class="stat-number" id="totalVoters">—</div>
+            <div class="stat-label">মোট ভোটার</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" id="votedCount">—</div>
+            <div class="stat-label">ভোট প্রদান করেছেন</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" id="votePercent">—%</div>
+            <div class="stat-label">ভোট প্রদানের হার</div>
+            <div class="percent-bar-bg"><div class="percent-bar-fill" id="percentFill"></div></div>
+          </div>
         </div>
-        <div style="overflow-x:auto;">
-          <table class="voter-table">
-            <thead>
-              <tr><th>নাম</th><th>ব্যাচ</th><th>ইমেইল</th><th>স্ট্যাটাস</th></tr>
-            </thead>
-            <tbody id="voterTableBody">
-              <tr><td colspan="4" style="text-align:center;">লোড হচ্ছে...</td></tr>
-            </tbody>
-          </table>
+
+        <!-- ভোটার তালিকা -->
+        <div class="voter-list-box">
+          <h4 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:12px;">👥 ভোটার তালিকা</h4>
+          <div style="overflow-x:auto;">
+            <table class="voter-table">
+              <thead>
+                <tr><th>নাম</th><th>ইমেইল</th></tr>
+              </thead>
+              <tbody id="voterTableBody">
+                <tr><td colspan="2" style="text-align:center;">লোড হচ্ছে...</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:8px;">ইমেইল সুরক্ষিত (প্রথম ২ ও শেষ ২ অক্ষর)</p>
         </div>
-        <p style="font-size:12px; color:var(--text-muted); margin-top:8px;">ইমেইল সুরক্ষিত (প্রথম ২ ও শেষ ২ অক্ষর)</p>
       </div>
     </div>
   </div>
 
-  <!-- বাকি স্ক্রিন (লগইন, OTP, সফল) একই রকম, শুধু ক্লাস ও কিছু টেক্সট বড় -->
+  <!-- বাকি স্ক্রিন (লগইন, OTP, সফল) -->
   <div id="screen-login" class="screen">
-    <div class="card" style="max-width:500px; margin:20px auto; background:white; border-radius:var(--radius); padding:28px 24px; box-shadow:var(--shadow);">
-      <h2 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:16px;">🔐 ভোটার যাচাইকরণ</h2>
+    <div class="card-form">
+      <h2 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:20px;">🔐 ভোটার যাচাইকরণ</h2>
       <div class="alert alert-error" id="loginError"></div>
       <div class="form-group">
         <label class="form-label">স্টুডেন্ট আইডি</label>
         <input type="text" id="studentId" class="form-input" placeholder="যেমন: B210305055">
       </div>
       <div class="form-group">
-        <label class="form-label">ইমেইল ঠিকানা</label>
+        <label class="form-label">ইমেইল</label>
         <input type="email" id="email" class="form-input" placeholder="আপনার ইমেইল">
       </div>
       <button class="btn btn-primary" id="loginBtn" onclick="handleLogin()">OTP পাঠান</button>
-      <button class="btn btn-outline" onclick="goBackToCandidates()">← প্রার্থী তালিকায় ফিরুন</button>
+      <button class="btn btn-outline" onclick="goBackToCandidates()">← ফিরে যান</button>
     </div>
   </div>
 
   <div id="screen-otp" class="screen">
-    <div class="card" style="max-width:500px; margin:20px auto; background:white; border-radius:var(--radius); padding:28px 24px; box-shadow:var(--shadow);">
+    <div class="card-form">
       <h2 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:12px;">📨 OTP যাচাই</h2>
-      <p id="otpHint" style="font-size:16px; margin-bottom:16px;"></p>
+      <p id="otpHint" style="font-size:17px; margin-bottom:20px;"></p>
       <div class="alert alert-error" id="otpError"></div>
       <div class="otp-group" id="otpInputs"></div>
       <div class="otp-timer">মেয়াদ: <span id="otpTimer">10:00</span></div>
@@ -365,11 +347,11 @@
   </div>
 
   <div id="screen-success" class="screen">
-    <div class="card" style="max-width:500px; margin:20px auto; background:white; border-radius:var(--radius); padding:40px 24px; text-align:center; box-shadow:var(--shadow);">
+    <div class="card-form" style="text-align:center;">
       <div style="font-size:48px; margin-bottom:20px;">✅</div>
       <h2 style="color:var(--success); margin-bottom:10px;">ভোট সফল!</h2>
-      <p style="font-size:16px;">আপনার ভোট গ্রহণ করা হয়েছে। ধন্যবাদ।</p>
-      <button class="btn btn-primary" style="margin-top:20px;" onclick="goBackToCandidates()">প্রার্থী তালিকায় ফিরুন</button>
+      <p style="font-size:17px;">আপনার ভোট গ্রহণ করা হয়েছে। ধন্যবাদ।</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="goBackToCandidates()">প্রার্থী তালিকায় ফিরুন</button>
     </div>
   </div>
 </div>
@@ -380,8 +362,7 @@
 </footer>
 
 <script>
-  // ═══ কনফিগারেশন ═══
-  const GAS_URL = 'YOUR_SCRIPT_URL'; // <-- আপনার URL বসান
+  const GAS_URL = 'YOUR_SCRIPT_URL'; // ← আপনার URL
 
   const CANDIDATES = [
     { id:'C01', name:'আসমাউল রানা',         dept:'নৃবিজ্ঞান বিভাগ, ১৭ তম আবর্তন', photoUrl:'https://drive.google.com/thumbnail?id=DUMMY1&sz=w200' },
@@ -393,11 +374,10 @@
 
   let selectedCandidateId = null;
   let currentVoter = null;
-  let otpTimer = null;
-  let timeLeft = 600;
-  let voterListTimer = null;
+  let otpTimer = null, timeLeft = 600;
+  let statsTimer = null;
 
-  // ── প্রার্থী গ্রিড ──
+  // প্রার্থী গ্রিড
   function renderCandidates() {
     const grid = document.getElementById('candidatesGrid');
     grid.innerHTML = '';
@@ -406,8 +386,7 @@
       card.className = 'candidate-card';
       card.innerHTML = `
         <div class="candidate-photo">
-          <img src="${c.photoUrl}" alt="${c.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-          <span style="display:none; font-size:40px;">👤</span>
+          <img src="${c.photoUrl}" alt="${c.name}" onerror="this.parentElement.innerHTML='<span style=\\'font-size:40px;\\'>👤</span>';">
         </div>
         <div class="candidate-name">${c.name}</div>
         <div class="candidate-dept">${c.dept}</div>
@@ -417,211 +396,165 @@
     });
     document.querySelectorAll('.btn-vote').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        const id = e.currentTarget.dataset.id;
-        startVotingFor(id);
+        startVotingFor(e.currentTarget.dataset.id);
       });
     });
   }
 
-  function startVotingFor(candidateId) {
-    selectedCandidateId = candidateId;
-    hideAllErrors();
+  function startVotingFor(cid) {
+    selectedCandidateId = cid;
     document.getElementById('studentId').value = '';
     document.getElementById('email').value = '';
-    currentVoter = null;
-    stopTimer();
+    hideAllErrors(); stopTimer(); clearOTPFields();
     showScreen('login');
   }
 
   function goBackToCandidates() {
-    hideAllErrors();
-    clearOTPFields();
-    stopTimer();
+    hideAllErrors(); stopTimer(); clearOTPFields();
     document.getElementById('studentId').value = '';
     document.getElementById('email').value = '';
-    currentVoter = null;
-    selectedCandidateId = null;
+    currentVoter = null; selectedCandidateId = null;
     showScreen('candidates');
   }
 
   function showScreen(id) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById('screen-' + id).classList.add('active');
+    document.getElementById('screen-'+id).classList.add('active');
     window.scrollTo(0,0);
   }
 
-  // ── OTP ইনপুট ──
+  // OTP
   function createOTPInputs() {
     const cont = document.getElementById('otpInputs');
     cont.innerHTML = '';
-    for(let i=0; i<6; i++) {
+    for(let i=0;i<6;i++) {
       const inp = document.createElement('input');
-      inp.type = 'text'; inp.maxLength = 1;
-      inp.className = 'otp-input'; inp.id = 'otp'+i;
+      inp.type='text'; inp.maxLength=1; inp.className='otp-input'; inp.id='otp'+i;
       inp.addEventListener('input', () => otpMove(i));
-      inp.addEventListener('keydown', (e) => otpBack(e,i));
+      inp.addEventListener('keydown', e => otpBack(e,i));
       cont.appendChild(inp);
     }
   }
   createOTPInputs();
+  function otpMove(i) { if(document.getElementById('otp'+i).value && i<5) document.getElementById('otp'+(i+1)).focus(); }
+  function otpBack(e,i) { if(e.key==='Backspace' && !document.getElementById('otp'+i).value && i>0) document.getElementById('otp'+(i-1)).focus(); }
+  function getOTP() { let otp=''; for(let i=0;i<6;i++) otp+=document.getElementById('otp'+i).value; return otp; }
+  function clearOTPFields() { for(let i=0;i<6;i++) document.getElementById('otp'+i).value=''; }
 
-  function otpMove(i) {
-    if(document.getElementById('otp'+i).value && i<5) document.getElementById('otp'+(i+1)).focus();
-  }
-  function otpBack(e,i) {
-    if(e.key==='Backspace' && !document.getElementById('otp'+i).value && i>0) document.getElementById('otp'+(i-1)).focus();
-  }
-  function getOTP() {
-    let otp=''; for(let i=0;i<6;i++) otp+=document.getElementById('otp'+i).value; return otp;
-  }
-  function clearOTPFields() {
-    for(let i=0;i<6;i++) document.getElementById('otp'+i).value='';
-  }
-
-  // ── লগইন ──
   async function handleLogin() {
     const sid = document.getElementById('studentId').value.trim();
     const email = document.getElementById('email').value.trim();
     const err = document.getElementById('loginError');
     const btn = document.getElementById('loginBtn');
     hideAllErrors();
-    if(!sid || !email) { showError(err,'স্টুডেন্ট আইডি ও ইমেইল দিন'); return; }
-    btn.disabled = true; btn.textContent = 'যাচাই হচ্ছে...';
+    if(!sid||!email) { showError(err,'উভয় তথ্য প্রয়োজন'); return; }
+    btn.disabled=true; btn.textContent='যাচাই হচ্ছে...';
     try {
-      const res = await apiCall('verifyVoter', { studentId:sid, email:email });
+      const res = await apiCall('verifyVoter',{studentId:sid, email});
       if(res.success) {
         currentVoter = res.voter;
-        document.getElementById('otpHint').textContent = maskEmail(email) + ' বরাবর OTP পাঠানো হয়েছে';
-        startTimer();
-        showScreen('otp');
-      } else {
-        showError(err, res.message || 'ভোটার পাওয়া যায়নি');
-        btn.disabled = false; btn.textContent = 'OTP পাঠান';
-      }
-    } catch(e) { showError(err,'সংযোগ ত্রুটি'); btn.disabled = false; btn.textContent = 'OTP পাঠান'; }
+        document.getElementById('otpHint').textContent = maskEmail(email) + ' বরাবর OTP পাঠানো হয়েছে';
+        startTimer(); showScreen('otp');
+      } else showError(err, res.message||'ভোটার পাওয়া যায়নি');
+    } catch(e) { showError(err,'সংযোগ ত্রুটি'); }
+    btn.disabled=false; btn.textContent='OTP পাঠান';
   }
 
   async function handleOTP() {
-    const otp = getOTP();
-    const err = document.getElementById('otpError');
-    const btn = document.getElementById('otpBtn');
+    const otp = getOTP(), err = document.getElementById('otpError'), btn = document.getElementById('otpBtn');
     hideAllErrors();
     if(otp.length<6) { showError(err,'৬ সংখ্যার OTP দিন'); return; }
-    btn.disabled = true; btn.textContent = 'যাচাই হচ্ছে...';
+    btn.disabled=true; btn.textContent='যাচাই হচ্ছে...';
     try {
-      const res = await apiCall('verifyOTP', { studentId:currentVoter.studentId, otp:otp });
-      if(res.success) {
-        await submitVoteDirect();
-      } else {
-        showError(err, res.message || 'OTP ভুল');
-        btn.disabled = false; btn.textContent = 'কোড যাচাই ও ভোট দিন';
-      }
-    } catch(e) { showError(err,'সংযোগ ত্রুটি'); btn.disabled = false; btn.textContent = 'কোড যাচাই ও ভোট দিন'; }
+      const res = await apiCall('verifyOTP',{studentId:currentVoter.studentId, otp});
+      if(res.success) await submitVoteDirect();
+      else { showError(err, res.message||'OTP ভুল'); btn.disabled=false; btn.textContent='কোড যাচাই ও ভোট দিন'; }
+    } catch(e) { showError(err,'ত্রুটি'); btn.disabled=false; btn.textContent='কোড যাচাই ও ভোট দিন'; }
   }
 
   async function resendOTP() {
     const btn = document.getElementById('resendBtn');
-    btn.disabled = true; btn.textContent = 'পাঠানো হচ্ছে...';
-    try { await apiCall('resendOTP',{ studentId:currentVoter.studentId }); timeLeft=600; startTimer(); } catch(e){}
-    btn.textContent = 'পুনরায় OTP পাঠান';
+    btn.disabled=true; btn.textContent='পাঠানো হচ্ছে...';
+    try { await apiCall('resendOTP',{studentId:currentVoter.studentId}); timeLeft=600; startTimer(); } catch(e){}
+    btn.textContent='পুনরায় OTP পাঠান';
   }
 
   function startTimer() {
-    stopTimer();
-    timeLeft = 600;
-    document.getElementById('resendBtn').disabled = true;
+    stopTimer(); timeLeft=600;
+    document.getElementById('resendBtn').disabled=true;
     otpTimer = setInterval(() => {
       timeLeft--;
-      const m = Math.floor(timeLeft/60), s = timeLeft%60;
+      const m=Math.floor(timeLeft/60), s=timeLeft%60;
       document.getElementById('otpTimer').textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-      if(timeLeft<=0) { clearInterval(otpTimer); document.getElementById('otpTimer').textContent='মেয়াদ শেষ'; document.getElementById('resendBtn').disabled=false; }
+      if(timeLeft<=0) {
+        clearInterval(otpTimer);
+        document.getElementById('otpTimer').textContent='মেয়াদ শেষ';
+        document.getElementById('resendBtn').disabled=false;
+      }
     },1000);
   }
   function stopTimer() { if(otpTimer) clearInterval(otpTimer); }
 
   async function submitVoteDirect() {
     const btn = document.getElementById('otpBtn');
-    btn.textContent = 'ভোট জমা হচ্ছে...'; btn.disabled = true;
+    btn.textContent='ভোট জমা হচ্ছে...'; btn.disabled=true;
     try {
       const votes = {};
-      votes[POSITION] = {
-        candidateId: selectedCandidateId,
-        candidateName: CANDIDATES.find(c=>c.id===selectedCandidateId)?.name
-      };
-      const res = await apiCall('submitVote', { studentId:currentVoter.studentId, votes:votes });
-      if(res.success) {
-        stopTimer();
-        showScreen('success');
-      } else {
-        alert(res.message || 'ভোট জমা ব্যর্থ');
-        btn.disabled = false; btn.textContent = 'কোড যাচাই ও ভোট দিন';
-      }
-    } catch(e) {
-      alert('সার্ভার ত্রুটি');
-      btn.disabled = false; btn.textContent = 'কোড যাচাই ও ভোট দিন';
-    }
+      votes[POSITION] = { candidateId:selectedCandidateId, candidateName:CANDIDATES.find(c=>c.id===selectedCandidateId)?.name };
+      const res = await apiCall('submitVote', { studentId:currentVoter.studentId, votes });
+      if(res.success) { stopTimer(); showScreen('success'); }
+      else { alert(res.message||'ব্যর্থ'); btn.disabled=false; btn.textContent='কোড যাচাই ও ভোট দিন'; }
+    } catch(e) { alert('সার্ভার ত্রুটি'); btn.disabled=false; btn.textContent='কোড যাচাই ও ভোট দিন'; }
   }
 
   function hideAllErrors() { document.querySelectorAll('.alert').forEach(a=>a.classList.remove('show')); }
-  function showError(el,msg) { el.textContent = msg; el.classList.add('show'); }
+  function showError(el,msg) { el.textContent=msg; el.classList.add('show'); }
+  function maskEmail(email) { const [u] = email.split('@'); return u.length<=4? u[0]+'***'+u.slice(-1) : u.slice(0,2)+'***'+u.slice(-2); }
 
-  function maskEmail(email) {
-    const [user, domain] = email.split('@');
-    if(user.length<=4) return user[0]+'***'+user.slice(-1);
-    return user.slice(0,2)+'***'+user.slice(-2);
-  }
-
-  // ── API ──
   async function apiCall(action, params) {
-    const resp = await fetch(GAS_URL + '?action='+action, {
-      method:'POST',
-      headers:{'Content-Type':'text/plain'},
+    const resp = await fetch(GAS_URL+'?action='+action, {
+      method:'POST', headers:{'Content-Type':'text/plain'},
       body: JSON.stringify({ action, ...params })
     });
     if(!resp.ok) throw new Error('HTTP '+resp.status);
     return await resp.json();
   }
 
-  // ── ভোটার তালিকা ও স্ট্যাটাস ──
-  async function loadVoterStats() {
+  // পরিসংখ্যান ও ভোটার তালিকা
+  async function loadVoterData() {
     try {
       const data = await apiCall('getVoterStats', {});
       if(data.success) {
         document.getElementById('totalVoters').textContent = data.totalVoters;
         document.getElementById('votedCount').textContent = data.votedCount;
-        const percent = data.totalVoters>0 ? Math.round((data.votedCount/data.totalVoters)*100) : 0;
-        document.getElementById('votePercent').textContent = percent;
+        document.getElementById('votePercent').textContent = data.percentage + '%';
+        document.getElementById('percentFill').style.width = data.percentage + '%';
 
+        // ভোটার টেবিল পপুলেট
         const tbody = document.getElementById('voterTableBody');
         tbody.innerHTML = '';
         data.voters.forEach(v => {
           const tr = document.createElement('tr');
-          tr.innerHTML = `
-            <td>${v.name}</td>
-            <td>${v.batch}</td>
-            <td class="voter-email">${v.emailMasked}</td>
-            <td><span class="status-badge ${v.status==='Voted'?'status-voted':'status-pending'}">${v.status==='Voted'?'ভোট দিয়েছেন':'ভোট দেননি'}</span></td>
-          `;
+          tr.innerHTML = `<td>${v.name}</td><td class="voter-email">${v.emailMasked}</td>`;
           tbody.appendChild(tr);
         });
       }
     } catch(e) {
-      document.getElementById('voterTableBody').innerHTML = '<tr><td colspan="4" style="text-align:center;">ডেটা লোড হয়নি</td></tr>';
+      document.getElementById('voterTableBody').innerHTML = '<tr><td colspan="2" style="text-align:center;">ডেটা লোড হয়নি</td></tr>';
     }
   }
 
-  function startVoterListAutoRefresh() {
-    loadVoterStats();
-    if(voterListTimer) clearInterval(voterListTimer);
-    voterListTimer = setInterval(loadVoterStats, 30000); // 30s
+  function startAutoRefresh() {
+    loadVoterData();
+    if(statsTimer) clearInterval(statsTimer);
+    statsTimer = setInterval(loadVoterData, 30000);
   }
+
   window.addEventListener('load', () => {
     renderCandidates();
-    startVoterListAutoRefresh();
+    startAutoRefresh();
   });
-  window.addEventListener('beforeunload', () => {
-    if(voterListTimer) clearInterval(voterListTimer);
-  });
+  window.addEventListener('beforeunload', () => { if(statsTimer) clearInterval(statsTimer); });
 </script>
 </body>
 </html>
