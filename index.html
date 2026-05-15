@@ -243,6 +243,27 @@
     .screen { display: none; }
     .screen.active { display: block; }
 
+    /* Confirmation screen */
+    .confirm-box {
+      max-width: 560px; margin: 20px auto;
+      background: var(--card-bg); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 32px;
+      text-align: center;
+    }
+    .confirm-candidate {
+      display: flex; align-items: center; gap: 16px;
+      margin: 20px 0; padding: 16px;
+      background: #f9fbf9; border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+    .confirm-candidate img {
+      width: 60px; height: 60px; border-radius: 50%;
+      object-fit: cover;
+    }
+    .voter-highlight {
+      font-weight: 600; color: var(--primary);
+    }
+
     footer {
       background: var(--primary-dark); padding: 20px 28px;
       text-align: center; border-top: 3px solid var(--secondary);
@@ -269,70 +290,48 @@
   <!-- প্রধান ড্যাশবোর্ড -->
   <div id="screen-candidates" class="screen active">
     <div class="dashboard-grid">
-      <!-- প্রার্থী প্যানেল -->
       <div class="candidates-panel">
         <h2 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:12px;">📌 প্রার্থী তালিকা</h2>
         <div class="candidates-grid" id="candidatesGrid"></div>
         <p class="hint-text">প্রার্থীর নিচের "ভোট দিন" বাটনে ক্লিক করে ভোট প্রদান শুরু করুন</p>
       </div>
 
-      <!-- ডান প্যানেল: পরিসংখ্যান + ভোটার তালিকা -->
       <div class="voter-stats-panel">
-        <!-- পরিসংখ্যান -->
         <div class="stats-box">
           <h3 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:18px;">📊 ভোটের অবস্থা</h3>
-          <div class="stat-item">
-            <div class="stat-number" id="totalVoters">—</div>
-            <div class="stat-label">মোট ভোটার</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" id="votedCount">—</div>
-            <div class="stat-label">ভোট প্রদান করেছেন</div>
-          </div>
+          <div class="stat-item"><div class="stat-number" id="totalVoters">—</div><div class="stat-label">মোট ভোটার</div></div>
+          <div class="stat-item"><div class="stat-number" id="votedCount">—</div><div class="stat-label">ভোট প্রদান করেছেন</div></div>
           <div class="stat-item">
             <div class="stat-number" id="votePercent">—%</div>
             <div class="stat-label">ভোট প্রদানের হার</div>
             <div class="percent-bar-bg"><div class="percent-bar-fill" id="percentFill"></div></div>
           </div>
         </div>
-
-        <!-- ভোটার তালিকা -->
         <div class="voter-list-box">
           <h4 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:12px;">👥 ভোটার তালিকা</h4>
-          <div style="overflow-x:auto;">
-            <table class="voter-table">
-              <thead>
-                <tr><th>নাম</th><th>ইমেইল</th></tr>
-              </thead>
-              <tbody id="voterTableBody">
-                <tr><td colspan="2" style="text-align:center;">লোড হচ্ছে...</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <table class="voter-table">
+            <thead><tr><th>নাম</th><th>ইমেইল</th></tr></thead>
+            <tbody id="voterTableBody"><tr><td colspan="2">লোড হচ্ছে...</td></tr></tbody>
+          </table>
           <p style="font-size:12px; color:var(--text-muted); margin-top:8px;">ইমেইল সুরক্ষিত (প্রথম ২ ও শেষ ২ অক্ষর)</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- বাকি স্ক্রিন (লগইন, OTP, সফল) -->
+  <!-- লগইন স্ক্রিন -->
   <div id="screen-login" class="screen">
     <div class="card-form">
       <h2 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:20px;">🔐 ভোটার যাচাইকরণ</h2>
       <div class="alert alert-error" id="loginError"></div>
-      <div class="form-group">
-        <label class="form-label">স্টুডেন্ট আইডি</label>
-        <input type="text" id="studentId" class="form-input" placeholder="যেমন: B210305055">
-      </div>
-      <div class="form-group">
-        <label class="form-label">ইমেইল</label>
-        <input type="email" id="email" class="form-input" placeholder="আপনার ইমেইল">
-      </div>
+      <div class="form-group"><label class="form-label">স্টুডেন্ট আইডি</label><input type="text" id="studentId" class="form-input" placeholder="যেমন: B210305055"></div>
+      <div class="form-group"><label class="form-label">ইমেইল</label><input type="email" id="email" class="form-input" placeholder="আপনার ইমেইল"></div>
       <button class="btn btn-primary" id="loginBtn" onclick="handleLogin()">OTP পাঠান</button>
       <button class="btn btn-outline" onclick="goBackToCandidates()">← ফিরে যান</button>
     </div>
   </div>
 
+  <!-- OTP স্ক্রিন -->
   <div id="screen-otp" class="screen">
     <div class="card-form">
       <h2 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:12px;">📨 OTP যাচাই</h2>
@@ -340,12 +339,31 @@
       <div class="alert alert-error" id="otpError"></div>
       <div class="otp-group" id="otpInputs"></div>
       <div class="otp-timer">মেয়াদ: <span id="otpTimer">10:00</span></div>
-      <button class="btn btn-accent" id="otpBtn" onclick="handleOTP()">কোড যাচাই ও ভোট দিন</button>
+      <button class="btn btn-accent" id="otpBtn" onclick="handleOTP()">কোড যাচাই করুন</button>
       <button class="btn btn-outline" id="resendBtn" onclick="resendOTP()" disabled>পুনরায় OTP পাঠান</button>
       <p class="hint-text">🔒 ইমেইলের স্প্যাম ফোল্ডারও দেখুন</p>
     </div>
   </div>
 
+  <!-- কনফার্মেশন স্ক্রিন (নতুন) -->
+  <div id="screen-confirm" class="screen">
+    <div class="confirm-box">
+      <h2 style="font-family:'Noto Serif Bengali',serif; color:var(--primary); margin-bottom:16px;">✅ আপনার ভোট নিশ্চিত করুন</h2>
+      <p style="font-size:16px;">আপনি <span class="voter-highlight" id="confirmVoterName">—</span> (<span id="confirmVoterEmail">—</span>) হিসেবে ভোট দিচ্ছেন।</p>
+      <div class="confirm-candidate" id="confirmCandidateBox">
+        <img id="confirmCandidatePhoto" src="" alt="" onerror="this.style.display='none'">
+        <div style="text-align:left;">
+          <div style="font-family:'Noto Serif Bengali',serif; font-size:18px; font-weight:700; color:var(--primary);" id="confirmCandidateName">—</div>
+          <div style="font-size:14px; color:var(--text-muted);" id="confirmCandidateDept">—</div>
+        </div>
+      </div>
+      <button class="btn btn-accent" onclick="submitFinalVote()" style="margin-bottom:12px;">🗳️ ভোট নিশ্চিত করুন</button>
+      <button class="btn btn-outline" onclick="changeCandidate()">← প্রার্থী পরিবর্তন করুন</button>
+      <p class="hint-text">⚠️ একবার নিশ্চিত করলে ভোট পরিবর্তন করা যাবে না।</p>
+    </div>
+  </div>
+
+  <!-- সফল ভোট -->
   <div id="screen-success" class="screen">
     <div class="card-form" style="text-align:center;">
       <div style="font-size:48px; margin-bottom:20px;">✅</div>
@@ -362,22 +380,23 @@
 </footer>
 
 <script>
-  const GAS_URL = 'https://script.google.com/macros/s/AKfycbwk-Yf7hA4TH7tA63eUHlPkza6mpVP2mBzEuq2w_qD3jJaoNa5km2F5bJnUXQsNa2SM/exec'; // ← আপনার URL
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbwk-Yf7hA4TH7tA63eUHlPkza6mpVP2mBzEuq2w_qD3jJaoNa5km2F5bJnUXQsNa2SM/exec';
 
   const CANDIDATES = [
     { id:'C01', name:'আসমাউল রানা',         dept:'নৃবিজ্ঞান বিভাগ, ১৭ তম আবর্তন', photoUrl:'https://drive.google.com/thumbnail?id=1G7uod4yIkh38WBEHPi6jIOhzCfw1Hqyi&sz=w200' },
     { id:'C02', name:'মো. বাশার আলী',       dept:'রাষ্ট্রবিজ্ঞান বিভাগ, ১৭ তম আবর্তন', photoUrl:'https://drive.google.com/thumbnail?id=16FCDQjU3U4AowxPHOVnZ-iG5jnXA33FF&sz=w200' },
     { id:'C03', name:'মো. সিহাব আলী',       dept:'আইন বিভাগ, ১৭ তম আবর্তন', photoUrl:'https://drive.google.com/thumbnail?id=13YwPTxtv2GoSjEzpNtirPWZ_Y16DHeQh&sz=w200' },
-    { id:'C04', name:'মাহমুদুল হাসান নায়েম',     dept:'নৃবিজ্ঞান বিভাগ, ১৭ তম আবর্তন', photoUrl:'https://drive.google.com/thumbnail?id=1yZxq9s6tF4gZfb_Cn1OKWO4T2AKLWvnJ&sz=w200' }
+    { id:'C04', name:'মাহমুদুল হাসান নায়েম', dept:'নৃবিজ্ঞান বিভাগ, ১৭ তম আবর্তন', photoUrl:'https://drive.google.com/thumbnail?id=1yZxq9s6tF4gZfb_Cn1OKWO4T2AKLWvnJ&sz=w200' }
   ];
   const POSITION = 'general_secretary';
 
   let selectedCandidateId = null;
   let currentVoter = null;
+  let otpVerified = false;      // OTP ভেরিফাইড কিনা
   let otpTimer = null, timeLeft = 600;
   let statsTimer = null;
 
-  // প্রার্থী গ্রিড
+  // ── প্রার্থী গ্রিড ──
   function renderCandidates() {
     const grid = document.getElementById('candidatesGrid');
     grid.innerHTML = '';
@@ -396,7 +415,14 @@
     });
     document.querySelectorAll('.btn-vote').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        startVotingFor(e.currentTarget.dataset.id);
+        const id = e.currentTarget.dataset.id;
+        if (otpVerified) {
+          // OTP ভেরিফাইড থাকলে সরাসরি কনফার্মেশন দেখাব
+          selectedCandidateId = id;
+          showConfirmationScreen();
+        } else {
+          startVotingFor(id);
+        }
       });
     });
   }
@@ -413,7 +439,9 @@
     hideAllErrors(); stopTimer(); clearOTPFields();
     document.getElementById('studentId').value = '';
     document.getElementById('email').value = '';
-    currentVoter = null; selectedCandidateId = null;
+    currentVoter = null;
+    selectedCandidateId = null;
+    otpVerified = false;   // লগইন রিসেট হলে OTP ভেরিফিকেশনও রিসেট
     showScreen('candidates');
   }
 
@@ -423,7 +451,7 @@
     window.scrollTo(0,0);
   }
 
-  // OTP
+  // ── OTP ইনপুট ──
   function createOTPInputs() {
     const cont = document.getElementById('otpInputs');
     cont.innerHTML = '';
@@ -441,6 +469,7 @@
   function getOTP() { let otp=''; for(let i=0;i<6;i++) otp+=document.getElementById('otp'+i).value; return otp; }
   function clearOTPFields() { for(let i=0;i<6;i++) document.getElementById('otp'+i).value=''; }
 
+  // ── লগইন ──
   async function handleLogin() {
     const sid = document.getElementById('studentId').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -460,6 +489,7 @@
     btn.disabled=false; btn.textContent='OTP পাঠান';
   }
 
+  // ── OTP যাচাই (এখন কেবল ভেরিফাই করে কনফার্মেশনে নেবে) ──
   async function handleOTP() {
     const otp = getOTP(), err = document.getElementById('otpError'), btn = document.getElementById('otpBtn');
     hideAllErrors();
@@ -467,9 +497,14 @@
     btn.disabled=true; btn.textContent='যাচাই হচ্ছে...';
     try {
       const res = await apiCall('verifyOTP',{studentId:currentVoter.studentId, otp});
-      if(res.success) await submitVoteDirect();
-      else { showError(err, res.message||'OTP ভুল'); btn.disabled=false; btn.textContent='কোড যাচাই ও ভোট দিন'; }
-    } catch(e) { showError(err,'ত্রুটি'); btn.disabled=false; btn.textContent='কোড যাচাই ও ভোট দিন'; }
+      if(res.success) {
+        otpVerified = true;          // OTP সফল
+        showConfirmationScreen();    // কনফার্মেশন স্ক্রিনে যান
+      } else {
+        showError(err, res.message||'OTP ভুল');
+        btn.disabled=false; btn.textContent='কোড যাচাই করুন';
+      }
+    } catch(e) { showError(err,'ত্রুটি'); btn.disabled=false; btn.textContent='কোড যাচাই করুন'; }
   }
 
   async function resendOTP() {
@@ -495,22 +530,76 @@
   }
   function stopTimer() { if(otpTimer) clearInterval(otpTimer); }
 
-  async function submitVoteDirect() {
-    const btn = document.getElementById('otpBtn');
-    btn.textContent='ভোট জমা হচ্ছে...'; btn.disabled=true;
+  // ── কনফার্মেশন স্ক্রিন ──
+  function showConfirmationScreen() {
+    const cand = CANDIDATES.find(c => c.id === selectedCandidateId);
+    if (!cand) return;
+
+    // ভোটার ও প্রার্থীর তথ্য দেখাও
+    document.getElementById('confirmVoterName').textContent = currentVoter.name;
+    document.getElementById('confirmVoterEmail').textContent = maskEmailFull(currentVoter.email); // full masked with domain
+
+    const photo = document.getElementById('confirmCandidatePhoto');
+    photo.src = cand.photoUrl;
+    photo.style.display = 'block';
+    photo.onerror = function(){ photo.style.display = 'none'; };
+
+    document.getElementById('confirmCandidateName').textContent = cand.name;
+    document.getElementById('confirmCandidateDept').textContent = cand.dept;
+
+    showScreen('confirm');
+  }
+
+  // প্রার্থী পরিবর্তন (OTP ভেরিফাইড অবস্থায় প্রার্থী তালিকায় ফেরত)
+  function changeCandidate() {
+    // কেবল প্রার্থী সিলেকশন স্ক্রিনে যাই, OTP ও ভোটার সংরক্ষিত থাকবে
+    selectedCandidateId = null; // আগের সিলেকশন ক্লিয়ার
+    showScreen('candidates');
+  }
+
+  // ফাইনাল সাবমিট
+  async function submitFinalVote() {
+    const btn = document.querySelector('#screen-confirm .btn-accent');
+    btn.disabled = true;
+    btn.textContent = 'ভোট জমা হচ্ছে...';
     try {
       const votes = {};
-      votes[POSITION] = { candidateId:selectedCandidateId, candidateName:CANDIDATES.find(c=>c.id===selectedCandidateId)?.name };
-      const res = await apiCall('submitVote', { studentId:currentVoter.studentId, votes });
-      if(res.success) { stopTimer(); showScreen('success'); }
-      else { alert(res.message||'ব্যর্থ'); btn.disabled=false; btn.textContent='কোড যাচাই ও ভোট দিন'; }
-    } catch(e) { alert('সার্ভার ত্রুটি'); btn.disabled=false; btn.textContent='কোড যাচাই ও ভোট দিন'; }
+      votes[POSITION] = {
+        candidateId: selectedCandidateId,
+        candidateName: CANDIDATES.find(c=>c.id===selectedCandidateId)?.name
+      };
+      const res = await apiCall('submitVote', { studentId: currentVoter.studentId, votes });
+      if(res.success) {
+        stopTimer();
+        otpVerified = false;
+        showScreen('success');
+      } else {
+        alert(res.message || 'ভোট জমা ব্যর্থ');
+        btn.disabled = false;
+        btn.textContent = '🗳️ ভোট নিশ্চিত করুন';
+      }
+    } catch(e) {
+      alert('সার্ভার ত্রুটি');
+      btn.disabled = false;
+      btn.textContent = '🗳️ ভোট নিশ্চিত করুন';
+    }
   }
 
   function hideAllErrors() { document.querySelectorAll('.alert').forEach(a=>a.classList.remove('show')); }
   function showError(el,msg) { el.textContent=msg; el.classList.add('show'); }
-  function maskEmail(email) { const [u] = email.split('@'); return u.length<=4? u[0]+'***'+u.slice(-1) : u.slice(0,2)+'***'+u.slice(-2); }
 
+  // ইমেইল মাস্কিং (লোকাল পার্ট মাস্ক + ডোমেইন দেখাবে)
+  function maskEmail(email) {
+    const [local, domain] = email.split('@');
+    if (local.length <= 4) return local[0] + '***' + local.slice(-1) + '@' + domain;
+    return local.slice(0,2) + '***' + local.slice(-2) + '@' + domain;
+  }
+  // ভোটার অবজেক্টে ইমেইল স্টোর করার জন্য পুরো ইমেইলটাই রাখি
+  function maskEmailFull(email) {
+    return maskEmail(email);
+  }
+
+  // ── API ──
   async function apiCall(action, params) {
     const resp = await fetch(GAS_URL+'?action='+action, {
       method:'POST', headers:{'Content-Type':'text/plain'},
@@ -520,7 +609,7 @@
     return await resp.json();
   }
 
-  // পরিসংখ্যান ও ভোটার তালিকা
+  // ── পরিসংখ্যান ও ভোটার তালিকা ──
   async function loadVoterData() {
     try {
       const data = await apiCall('getVoterStats', {});
@@ -530,7 +619,6 @@
         document.getElementById('votePercent').textContent = data.percentage + '%';
         document.getElementById('percentFill').style.width = data.percentage + '%';
 
-        // ভোটার টেবিল পপুলেট
         const tbody = document.getElementById('voterTableBody');
         tbody.innerHTML = '';
         data.voters.forEach(v => {
