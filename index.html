@@ -1070,7 +1070,7 @@ function goToConfirm() {
 
   const missing = CANDIDATES.filter(p => !selectedVotes[p.positionEn]);
   if (missing.length > 0) {
-    showAlert(err, 'অনুগ্রহ করে সকল পদের জন্য প্রার্থী বেছে নিন: ' +
+    showAlert(err, 'অনুগ্রহ করে প্রার্থী বেছে নিন: ' +
       missing.map(p => p.position).join(', '));
     return;
   }
